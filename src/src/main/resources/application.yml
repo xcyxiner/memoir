@@ -4,3 +4,7 @@ name: hellokitty
 student:
   name: testkitty
   age: 30
+spring:
+  data:
+    mongodb:
+      uri: mongodb://testuser:123456@47.100.241.71:27017/testdb?authSource=admin

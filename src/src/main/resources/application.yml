@@ -1,0 +1,6 @@
+server:
+  port: 8080
+name: hellokitty
+student:
+  name: testkitty
+  age: 30

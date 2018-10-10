@@ -2,6 +2,7 @@ package com.britreasure.memoir.service;
 
 import com.britreasure.memoir.BaseTest;
 import com.britreasure.memoir.model.User;
+import com.britreasure.memoir.serviceImpl.UserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,6 @@
-package com.britreasure.memoir;
+package com.britreasure.memoir.repository;
 
+import com.britreasure.memoir.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

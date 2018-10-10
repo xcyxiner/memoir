@@ -1,4 +1,4 @@
-package com.britreasure.memoir;
+package com.britreasure.memoir.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

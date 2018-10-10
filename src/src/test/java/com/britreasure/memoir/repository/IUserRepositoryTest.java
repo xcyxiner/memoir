@@ -1,5 +1,7 @@
-package com.britreasure.memoir;
+package com.britreasure.memoir.repository;
 
+import com.britreasure.memoir.BaseTest;
+import com.britreasure.memoir.model.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.britreasure.memoir;
+package com.britreasure.memoir.model;
 
 
 import org.springframework.data.annotation.Id;

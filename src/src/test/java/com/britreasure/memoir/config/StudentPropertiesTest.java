@@ -1,5 +1,6 @@
-package com.britreasure.memoir;
+package com.britreasure.memoir.config;
 
+import com.britreasure.memoir.BaseTest;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

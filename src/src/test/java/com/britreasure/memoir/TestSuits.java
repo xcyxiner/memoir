@@ -1,5 +1,7 @@
 package com.britreasure.memoir;
 
+import com.britreasure.memoir.config.StudentPropertiesTest;
+import com.britreasure.memoir.controller.HelloControllerTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

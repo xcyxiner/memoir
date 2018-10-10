@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author xcyxiner
  * @create: 2018-10-09 下午6:28
  */
-public class IUserRepositoryTestJunit extends JunitBaseTest {
+public class UserRepositoryTestJunit extends JunitBaseTest {
     @Autowired
-    private IUserRepository userRepository;
+    private UserRepository userRepository;
 
     @Test
     public void testAddUser() {

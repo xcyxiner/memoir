@@ -19,4 +19,8 @@ spring:
         max-wait: -1
         max-idle: 5
         min-idle: 0
-    timeout: 10000
+  rabbitmq:
+    host: 47.100.241.71
+    port: 5672
+    username: hello
+    password: kitty

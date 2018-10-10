@@ -2,7 +2,7 @@ package com.britreasure.memoir.serviceImpl;
 
 import com.alibaba.fastjson.JSON;
 import com.britreasure.memoir.model.User;
-import com.britreasure.memoir.repository.IUserRepository;
+import com.britreasure.memoir.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -18,7 +18,7 @@ import java.util.List;
 public class UserServiceImpl {
 
     @Autowired
-    IUserRepository userRepository;
+    UserRepository userRepository;
 
     @Autowired
     RedisTemplate redisTemplate;

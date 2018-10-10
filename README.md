@@ -11,3 +11,18 @@
 * mongodb
 * redis
 * swagger2
+* package -> jar 
+
+# 发布
+* 拷贝memoir-0.0.1-SNAPSHOT.jar到docker目录下
+* 执行start.sh
+
+ ```
+ docker/
+├── Dockerfile
+└── start.sh
+ ```
+
+
+# API接口页面
+* [http://47.100.241.71:8080/swagger-ui.html](http://47.100.241.71:8080/swagger-ui.html)

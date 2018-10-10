@@ -1,6 +1,6 @@
 package com.britreasure.memoir.repository;
 
-import com.britreasure.memoir.BaseTest;
+import com.britreasure.memoir.JunitBaseTest;
 import com.britreasure.memoir.model.User;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author xcyxiner
  * @create: 2018-10-09 下午6:28
  */
-public class IUserRepositoryTest extends BaseTest {
+public class IUserRepositoryTestJunit extends JunitBaseTest {
     @Autowired
     private IUserRepository userRepository;
 

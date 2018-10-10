@@ -1,6 +1,6 @@
 package com.britreasure.memoir.service;
 
-import com.britreasure.memoir.BaseTest;
+import com.britreasure.memoir.JunitBaseTest;
 import com.britreasure.memoir.model.User;
 import com.britreasure.memoir.serviceImpl.UserServiceImpl;
 import org.junit.Assert;
@@ -15,7 +15,7 @@ import java.util.List;
  * @author xcyxiner
  * @create: 2018-10-10 上午11:09
  */
-public class UserServiceImplTest extends BaseTest {
+public class UserServiceImplTestJunit extends JunitBaseTest {
     @Autowired
     UserServiceImpl userServiceImpl;
 

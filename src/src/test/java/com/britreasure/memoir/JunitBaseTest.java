@@ -11,7 +11,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @WebAppConfiguration
-public class BaseTest {
+public abstract class JunitBaseTest {
 
     @Before
     public void init() {

@@ -1,6 +1,6 @@
 package com.britreasure.memoir.config;
 
-import com.britreasure.memoir.BaseTest;
+import com.britreasure.memoir.JunitBaseTest;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author xcyxiner
  * @create: 2018-10-09 下午5:24
  */
-public class StudentPropertiesTest extends BaseTest {
+public class StudentPropertiesTestJunit extends JunitBaseTest {
     @Autowired
     private StudentProperties studentProperties;
 

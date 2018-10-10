@@ -16,7 +16,7 @@ public class UserRepositoryTestJunit extends JunitBaseTest {
 
     @Test
     public void testAddUser() {
-        userRepository.save(new User(1L, "xcyxiner", 30));
+        userRepository.save(new User("xcyxiner", 30));
         Assert.assertSame(30, userRepository.findByUsername("xcyxiner").getAge());
     }
 }

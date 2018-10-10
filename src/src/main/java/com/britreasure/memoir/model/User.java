@@ -9,8 +9,16 @@ import org.springframework.data.annotation.Id;
  */
 public class User {
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Id
-    private Long id;
+    private String id;
 
     public String getUsername() {
         return username;
@@ -32,8 +40,22 @@ public class User {
 
     private Integer age;
 
-    public User(Long id, String username, Integer age) {
-        this.id = id;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    private String email;
+    private String password;
+
+    public User() {
+    
+    }
+
+    public User(String username, Integer age) {
         this.username = username;
         this.age = age;
     }

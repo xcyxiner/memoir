@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create: 2018-10-09 下午3:58
  */
 @RestController
-@RequestMapping("api")
+@RequestMapping("/api/hello")
 @Api("HelloController API")
 public class HelloController {
 

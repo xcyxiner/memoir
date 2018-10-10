@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create: 2018-10-10 下午4:21
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/rabbitmq")
 @Api("RabbitmqController controller")
 public class RabbitmqController {
 

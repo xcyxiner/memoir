@@ -30,7 +30,7 @@ public class HelloController {
 
     @ApiOperation(value = "获取hello输出", notes = "hello world")
     @ApiResponse(code = 200, message = "hello world!")
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = {RequestMethod.POST, RequestMethod.GET})
     public String hello() {
         return "hello world!" + name + "--" + studentProperties.getName();
     }

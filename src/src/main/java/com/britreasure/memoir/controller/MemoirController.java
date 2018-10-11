@@ -4,6 +4,7 @@ import com.britreasure.memoir.model.Memoir;
 import com.britreasure.memoir.repository.MemoirRepository;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/memoir")
 @Api("MemoirController API")
+@PreAuthorize("hasRole('USER')")
 public class MemoirController {
 
     private MemoirRepository memoirRepository;

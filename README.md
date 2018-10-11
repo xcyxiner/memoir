@@ -1,4 +1,4 @@
-# memoir_sprint_boot
+# memoir
 
 |名称|备注|
 |---|---|
@@ -6,12 +6,15 @@
 
 
 # 相关资料
+* spring boot
 * restful API
 * junit
 * mongodb
 * redis
 * swagger2
 * package -> jar 
+* rabbitmq
+* cors
 
 # 发布
 * 拷贝memoir-0.0.1-SNAPSHOT.jar到docker目录下

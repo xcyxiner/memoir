@@ -1,11 +1,13 @@
 package com.britreasure.memoir;
 
+import com.google.common.collect.Lists;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.ApiKey;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -21,11 +23,16 @@ public class Swagger2 {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .securitySchemes(Lists.newArrayList(apiKey()))
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.britreasure.memoir"))
                 .paths(PathSelectors.any())
                 .build();
+    }
+
+    private ApiKey apiKey() {
+        return new ApiKey("apikey", "Authorization", "header");
     }
 
     private ApiInfo apiInfo() {

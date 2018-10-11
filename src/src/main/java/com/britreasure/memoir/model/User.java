@@ -3,6 +3,8 @@ package com.britreasure.memoir.model;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 /**
  * @author xcyxiner
  * @create: 2018-10-09 下午6:05
@@ -49,14 +51,40 @@ public class User {
     }
 
     private String email;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     private String password;
 
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
+    private List<String> roles;
+
     public User() {
-    
+
     }
 
     public User(String username, Integer age) {
         this.username = username;
         this.age = age;
     }
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
 }

@@ -27,6 +27,7 @@ public class MemoirController {
         this.memoirRepository = memoirRepository;
     }
 
+
     @RequestMapping(method = RequestMethod.GET)
     public List<Memoir> getAllMemoir() {
         return memoirRepository.findAll();

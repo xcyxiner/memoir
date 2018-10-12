@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -33,6 +34,56 @@ public class JwtTokenUtil {
         byte[] tmpByte = secret.getBytes(Charsets.UTF_8);
         SecretKey key = Keys.hmacShaKeyFor(tmpByte);
         return key;
+    }
+
+    public String getUsernameFromToken(String token) {
+
+        Map<String, Object> map = getClaimsFromToken(token);
+        if (map != null) {
+            if (map.containsKey("username")) {
+                return map.get("username").toString();
+            }
+        }
+        return null;
+
+    }
+
+    public boolean validateToken(String token, Object object) {
+
+        Map<String, Object> oldmap = getClaimsFromToken(token);
+        Map<String, Object> map = BeanToMapUtil.objectToMap(object);
+        if (oldmap == null) {
+            return false;
+        }
+        if (!oldmap.containsKey("exp")) {
+            return false;
+        }
+        Long lastTokenDateLong = Long.parseLong(oldmap.get("exp").toString());
+        Long nowDateLong = System.currentTimeMillis() / 1000;
+        if (lastTokenDateLong - nowDateLong > EXPIRATION_TIME) {
+            return false;
+        }
+
+
+        Iterator<Map.Entry<String, Object>> iter1 = oldmap.entrySet().iterator();
+        while (iter1.hasNext()) {
+            Map.Entry<String, Object> entry1 = iter1.next();
+            if (entry1.getKey() != "exp") {
+                Object m1value = null;
+                if (entry1.getValue() != null) {
+                    m1value = entry1.getValue();
+                }
+                Object m2value = null;
+                if (map.get(entry1.getKey()) != null) {
+                    m2value = map.get(entry1.getKey());
+                }
+
+                if (!m1value.equals(m2value)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 

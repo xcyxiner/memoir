@@ -29,4 +29,14 @@ public class JwtTokenUtilTest extends JunitBaseTest {
         Assert.assertNotNull(tmpObj);
         Assert.assertEquals("xcyxiner", tmpObj.get("username"));
     }
+
+
+    @Test
+    public void validateTokenTest() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("username", "xcyxiner");
+        String tokenSign = jwtTokenUtil.generateToken(map);
+        boolean checkResult = jwtTokenUtil.validateToken(tokenSign, map);
+        Assert.assertTrue(checkResult);
+    }
 }

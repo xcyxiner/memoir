@@ -1,6 +1,5 @@
 package com.britreasure.memoir.serviceImpl;
 
-import com.alibaba.fastjson.JSON;
 import com.britreasure.memoir.model.User;
 import com.britreasure.memoir.repository.UserRepository;
 import com.britreasure.memoir.service.AuthService;
@@ -8,12 +7,11 @@ import com.britreasure.memoir.util.BeanToMapUtil;
 import com.britreasure.memoir.util.JwtTokenUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -32,9 +30,6 @@ public class AuthServiceImpl implements AuthService {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private UserDetailsService userDetailsService;
-
-    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -42,6 +37,9 @@ public class AuthServiceImpl implements AuthService {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Value("${jwt.tokenHead}")
+    private String tokenHead;
 
     @Override
     public User register(User userAdd) {
@@ -61,11 +59,11 @@ public class AuthServiceImpl implements AuthService {
         UsernamePasswordAuthenticationToken upToken = new UsernamePasswordAuthenticationToken(username, password);
         final Authentication authentication = authenticationManager.authenticate(upToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        final UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-        JSON.toJSONString(userDetails);
-        Map<String, Object> map = BeanToMapUtil.objectToMap(userDetails);
+
+//        final UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+        Map<String, Object> map = BeanToMapUtil.objectToMap(authentication.getPrincipal());
         final String token = jwtTokenUtil.generateToken(map);
-        return token;
+        return tokenHead + token;
     }
 
     @Override

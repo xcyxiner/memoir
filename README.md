@@ -15,6 +15,9 @@
 * package -> jar 
 * rabbitmq
 * cors
+* jwt
+* mock
+
 
 # 发布
 * 拷贝memoir-0.0.1-SNAPSHOT.jar到docker目录下
